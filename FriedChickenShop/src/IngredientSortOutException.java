@@ -4,10 +4,10 @@ public class IngredientSortOutException extends RuntimeException
     {
         if (theDrink instanceof Beers)
         {
-            System.out.println("Error: the " + theDrink.getName() + " Sold Out.");
+            System.out.println("Error: the Beer " + theDrink.getName() + " Sold Out.");
         } else if (theDrink instanceof Juice)
         {
-            System.out.println("Error: the " + theDrink.getName() + " Sold Out.");
+            System.out.println("Error: the Juice " + theDrink.getName() + " Sold Out.");
         }
     }
 }

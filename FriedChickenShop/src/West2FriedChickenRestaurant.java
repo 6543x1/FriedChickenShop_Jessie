@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class West2FriedChickenRestaurant implements FriedChickenRestaurant{
@@ -53,7 +54,7 @@ public class West2FriedChickenRestaurant implements FriedChickenRestaurant{
     }
     @Override
     public void GetIn(Drinks D) {
-        //我觉得进货的时候就要先判断原料是否过期（黑心批发商
+        //也许进货的时候就要先判断原料是否过期（黑心批发商）
         if(D instanceof Beers){
             if(balance-D.getPrice()>=0){
             AllBeers.add((Beers) D);
@@ -72,6 +73,9 @@ public class West2FriedChickenRestaurant implements FriedChickenRestaurant{
                 throw new OverdraftBalanceException(D.getPrice()-balance);
             }
         }
+    }
+    public void GetIn(Drinks[] D){
+        Arrays.stream(D).forEach(this::GetIn);
     }
     public void printMenu() {
         System.out.print("Menu:     Name:     Price:\n");
